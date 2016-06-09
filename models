@@ -33,6 +33,6 @@ DATABASES = {
     'PORT': '',
   }
 }
-p
-ython2.6 manage.py syncdb
+
+python2.6 manage.py syncdb
 python2.6 manage.py runserver
