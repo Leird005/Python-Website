@@ -6,3 +6,33 @@ class posts(models.Model):
   title = models.CharField(max_length = 100)
   bodytext = models.TextField()
   timestamp = models.DateTimeField()
+
+#install mysql
+brew install mysql
+easy_install mysql-python
+
+#create access credentials#
+mysqlld_safe -- skip-grant-tables #let anyone have full permissions
+mysqql -u root
+UPDATE mysql.user SET Password = PASSWORD('password123') WHERE User = 'root';
+FLUSH PRIVILEGES;
+
+
+url(r'^$', 'FirstBlog.blog.views.home', name ='home)
+
+mysql -u root - p #log in with password 'password123'
+CREATE DATABASE firstblog;
+
+DATABASES = {
+  'default: {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'firstblog',
+    'USER': 'root',
+    'PASSWORD':'password123'
+    'HOST': '',
+    'PORT': '',
+  }
+}
+p
+ython2.6 manage.py syncdb
+python2.6 manage.py runserver
