@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 
-from blog.models import posts
+from blog.models import 'FirstBlog.blog', posts
 
 def home(request):
     content = {
@@ -9,5 +9,5 @@ def home(request):
         'date' : '9th June 2016',
         'body' : 'This is my first blog post!',
     }
-
-  return render_to_response('index.html', content)
+    entries = posts.objects.all()[:10]
+  return render_to_response('index.html', {'posts' : entries})
