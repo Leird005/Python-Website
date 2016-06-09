@@ -1,0 +1,18 @@
+wget http://www.djangoproject.com/download/1.3.1/tarball/
+tar xzvf Django-1.3.1.tar.gz
+cd Django-1.3.1
+python setup.py install
+
+python
+from python import get_version
+get_version()
+
+#change to my username#
+cd~/Documents/Projects
+django-admin.py stratprject FirstBlog
+cd FirstBlog
+ls
+
+python manage.py startapp blog
+cd blog
+ls
